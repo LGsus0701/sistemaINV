@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>SistemaINV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Inventario</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<h1> Sistema de gestion de inventario oño</h1>
-
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-blue-900 text-white p-5">
+            <h1 class="text-2xl font-bold mb-5">Inventario</h1>
+            <nav>
+                <ul>
+                    <li class="mb-2"><a href="#" class="block p-2 bg-blue-700 rounded">Inicio</a></li>
+                    <li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Productos</a></li>
+                    <li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Compras</a></li>
+                    <li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Stock</a></li>
+                    <li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Despacho</a></li>
+                    <li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Proveedores</a></li>
+                    <li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Reportes</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Contenido -->
+        <main class="flex-1 p-6">
+            <h2 class="text-3xl font-semibold mb-4">YISUSLOGIST</h2>
+            <img src="https://driv.in/hubfs/warehouse-insulation-benefits-1.jpg" alt="Imagen de inventario" class="w-full h-64 object-cover rounded-lg mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold">Total Productos</h3>
+                    <p class="text-2xl font-bold text-blue-600">150</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold">Stock Bajo</h3>
+                    <p class="text-2xl font-bold text-red-600">10</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold">Proveedores</h3>
+                    <p class="text-2xl font-bold text-green-600">20</p>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
