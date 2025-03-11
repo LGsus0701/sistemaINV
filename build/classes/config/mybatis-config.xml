@@ -12,15 +12,15 @@
                 <property name="driver" value="org.postgresql.Driver"/>
                 <property name="url" value="jdbc:postgresql://localhost/SISTEMA_INVENTARIO"/>
                 <property name="username" value="postgres"/>
-                <property name="password" value="root"/>
+                <property name="password" value="sqladmin"/>
             </dataSource>
         </environment>
     </environments>
 
 
 	<!-- RUTA DE OTROS ARCHIVOS XML PARA MYBATIS -->
-<!--     <mappers> -->
-<!--         Para usar el XML, se referencia con 'resource' -->
-<!--         <mapper resource="dao/CategoriaMapper.xml"/> -->
-<!--     </mappers> -->
-<!-- </configuration> -->
+	<mappers>
+		<!-- Para usar el XML, se referencia con 'resource' -->
+		<mapper resource="dao/CategoriaMapper.xml" />
+	</mappers>
+</configuration>
