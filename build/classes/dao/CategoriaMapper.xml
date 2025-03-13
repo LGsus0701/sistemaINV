@@ -15,7 +15,7 @@
  	<select id="listarCategorias" resultMap="CategoriaMap">
  		SELECT id_categoria, nombre, imagen_url, fecha_creacion
  		FROM categorias
- 		WHERE estado_auditoria = '1'
+ 		WHERE estado = '1'
  	</select>
  	
  </mapper>
