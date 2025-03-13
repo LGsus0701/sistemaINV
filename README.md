@@ -43,4 +43,6 @@ Relacionado con usuarios (quién generó el reporte) y clientes (si es un report
 
 *CONTRERAS JEISON*
 
+![image](https://github.com/user-attachments/assets/79437558-9f8b-481c-a8a7-f860da5ece42)
+
 
