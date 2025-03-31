@@ -17,7 +17,7 @@
             <nav>
                 <ul>
                     <li class="mb-2"><a href="/SistemaINV" class="block p-2 bg-blue-700 rounded">Inicio</a></li>
-                    <li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Productos</a></li>
+                    <li class="mb-2"><a href="/SistemaINV/productos" class="block p-2 hover:bg-blue-700 rounded">Productos</a></li>
                     <li class="mb-2"><a href="/SistemaINV/categorias" class="block p-2 hover:bg-blue-700 rounded-md cursor-pointer border border-white border-solid">Categorias</a></li>
                     <li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Ingresos</a></li>
                     <li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Salidas</a></li>
@@ -39,7 +39,7 @@
                 <p class="text-center font-bold text-gray-600"><%= categoria.getNombre() %></p>
                 
                 <!-- Botones -->
-                <div class="flex flex-col gap-2 w-full">
+                <!-- <div class="flex flex-col gap-2 w-full">
                     <button class="bg-blue-500 text-white px-4 py-1 rounded-md w-full hover:bg-blue-600">
                         Ver Producto
                     </button>
@@ -49,7 +49,7 @@
                     <button class="bg-red-500 text-white px-4 py-1 rounded-md w-full hover:bg-red-600">
                         Eliminar
                     </button>
-                </div>
+                </div> -->
             </div>
         <%  } %>
         <%  } else { %>
