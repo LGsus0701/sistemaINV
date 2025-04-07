@@ -4,13 +4,17 @@ import java.sql.Date;
 import java.text.DecimalFormat;
 
 public class Producto {
-	Integer idProducto;
-	String codigo;
-	String nombre;
-	Double precio;
-	Integer stockActual;
-	Integer stockMinimo;
-	Date fechaCreacion;
+    Integer idProducto;
+    String codigo;
+    String nombre;
+    Double precio;
+    String moneda;
+    Integer stockActual;
+    Integer stockMinimo;
+    Date fechaCreacion;
+    Integer idCategoria;
+    String nombreCategoria;
+    
 	public Integer getIdProducto() {
 		return idProducto;
 	}
@@ -35,6 +39,12 @@ public class Producto {
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
+	public String getMoneda() {
+		return moneda;
+	}
+	public void setMoneda(String moneda) {
+		this.moneda = moneda;
+	}
 	public Integer getStockActual() {
 		return stockActual;
 	}
@@ -53,6 +63,18 @@ public class Producto {
 	public void setFechaCreacion(Date fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
-	
-
+	public Integer getIdCategoria() {
+		return idCategoria;
+	}
+	public void setIdCategoria(Integer idCategoria) {
+		this.idCategoria = idCategoria;
+	}
+	public String getNombreCategoria() {
+		return nombreCategoria;
+	}
+	public void setNombreCategoria(String nombreCategoria) {
+		this.nombreCategoria = nombreCategoria;
+	}
+ 
+    
 }

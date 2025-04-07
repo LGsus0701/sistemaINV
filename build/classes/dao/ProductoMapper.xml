@@ -5,20 +5,33 @@
   
  <mapper namespace="dao.ProductoMapper">
  
- 	<resultMap id="ProductoMap" type="models.Producto" >
- 		<id column="id_producto" property="idProducto"/>
- 		<result column="codigo" property="codigo"/>
- 		<result column="nombre" property="nombre"/>
- 		<result column="precio" property="precio"/>
- 		<result column="stock_actual" property="stockActual"/>
- 		<result column="stock_minimo" property="stockMinimo"/>
- 		<result column="fecha_creacion" property="fechaCreacion"/>
- 	</resultMap>
+ 	<resultMap id="ProductoMap" type="models.Producto">
+        <id column="id_producto" property="idProducto"/>
+        <result column="codigo" property="codigo"/>
+        <result column="nombre" property="nombre"/>
+        <result column="precio" property="precio"/>
+        <result column="moneda" property="moneda"/>
+        <result column="stock_actual" property="stockActual"/>
+        <result column="stock_minimo" property="stockMinimo"/>
+        <result column="fecha_creacion" property="fechaCreacion"/>
+        <result column="id_categoria" property="idCategoria"/>
+        <result column="nombre_categoria" property="nombreCategoria"/> <!-- Nuevo mapeo -->
+    </resultMap>
  
  	<select id="listarProductos" resultMap="ProductoMap">
- 		SELECT id_producto, codigo, nombre, precio, stock_actual, stock_minimo, fecha_creacion
- 		FROM productos
- 		WHERE estado = '1'
- 	</select>
-
+        SELECT 
+            p.id_producto, 
+            p.codigo, 
+            p.nombre, 
+            p.precio, 
+            p.moneda, 
+            p.stock_actual, 
+            p.stock_minimo, 
+            p.fecha_creacion, 
+            p.id_categoria,
+            c.nombre AS nombre_categoria
+        FROM productos p
+        JOIN categorias c ON p.id_categoria = c.id_categoria
+        WHERE p.estado_auditoria = '1'
+    </select>
  </mapper>

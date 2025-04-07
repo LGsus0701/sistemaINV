@@ -23,5 +23,7 @@
 		<!-- Para usar el XML, se referencia con 'resource' -->
 		<mapper resource="dao/CategoriaMapper.xml" />
 		<mapper resource="dao/ProductoMapper.xml"/>
+		<mapper resource="dao/ProveedorMapper.xml"/>
+		<mapper resource="dao/CompraMapper.xml"/>
 	</mappers>
 </configuration>

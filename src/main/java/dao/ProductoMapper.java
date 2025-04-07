@@ -7,5 +7,4 @@ import models.Producto;
 public interface ProductoMapper {
 	List<Producto> listarProductos();
 	
-
 }
