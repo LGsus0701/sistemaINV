@@ -21,7 +21,7 @@
                     <li class="mb-2"><a href="/SistemaINV/categorias" class="block p-2 hover:bg-blue-700 rounded-md cursor-pointer border border-white border-solid">Categorias</a></li>
                     <li class="mb-2"><a href="/SistemaINV/compras" class="block p-2 hover:bg-blue-700 rounded">Compras</a></li>
                     <li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Ingresos</a></li>
-                    <li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Salidas</a></li>
+                    <li class="mb-2"><a href="/SistemaINV/salidas" class="block p-2 hover:bg-blue-700 rounded">Salidas</a></li>
                     <li class="mb-2"><a href="/SistemaINV/proveedores" class="block p-2 hover:bg-blue-700 rounded">Proveedores</a></li>
                     <li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Reportes</a></li>
                 </ul>
