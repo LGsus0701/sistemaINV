@@ -1,1 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.IngresoMapper">
+
+    <!-- Mapeo de resultados -->
+    <resultMap id="IngresoResultMap" type="models.Ingreso">
+        <id property="idIngreso" column="id_ingreso" />
+        <result property="fechaIngreso" column="fecha_ingreso" />
+        <result property="idCompra" column="id_compra" />
+        <result property="fechaCreacion" column="fecha_creacion" />
+    </resultMap>
+
+    <!-- Listar todos los ingresos -->
+    <select id="listarIngresos" resultMap="IngresoResultMap">
+        SELECT 
+            id_ingreso,
+            fecha_ingreso,
+            id_compra,
+            fecha_creacion
+        FROM ingresos
+        ORDER BY fecha_ingreso DESC
+    </select>
+
+</mapper>

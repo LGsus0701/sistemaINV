@@ -1,11 +1,18 @@
 package controllers;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import models.Ingreso;
+import services.IngresoService;
+import services.impl.IngresoServiceImpl;
 
 /**
  * Servlet implementation class IngresoServlet
@@ -13,21 +20,24 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/ingresos")
 public class IngresoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private final IngresoService ingresoService;
+	
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    
     public IngresoServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        ingresoService = new IngresoServiceImpl();
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		List<Ingreso> ingresos = ingresoService.listarIngresos();
+		request.setAttribute("ingresos", ingresos);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/views/ingresos.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	

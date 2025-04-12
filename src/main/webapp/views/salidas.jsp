@@ -19,8 +19,8 @@
 					<li class="mb-2"><a href="/SistemaINV/productos" class="block p-2 hover:bg-blue-700 rounded">Productos</a></li>
 					<li class="mb-2"><a href="/SistemaINV/categorias" class="block p-2 hover:bg-blue-700 rounded">Categorias</a></li>
 					<li class="mb-2"><a href="/SistemaINV/compras" class="block p-2 hover:bg-blue-700 rounded">Compras</a></li>
-					<li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Ingresos</a></li>
-					<li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Salidas</a></li>
+					<li class="mb-2"><a href="/SistemaINV/ingresos" class="block p-2 hover:bg-blue-700 rounded">Ingresos</a></li>
+					<li class="mb-2"><a href="/SistemaINV/salidas" class="block p-2 hover:bg-blue-700 rounded">Salidas</a></li>
 					<li class="mb-2"><a href="/SistemaINV/proveedores" class="block p-2 hover:bg-blue-700 rounded">Proveedores</a></li>
 					<li class="mb-2"><a href="#" class="block p-2 hover:bg-blue-700 rounded">Reportes</a></li>
 				</ul>
@@ -32,45 +32,44 @@
 
 			<!-- Tabla de Salidas -->
 			<div class="w-full overflow-x-auto">
-				<table class="min-w-full bg-white border border-gray-300 rounded-md shadow-md">
+				<table
+					class="min-w-full bg-white border border-gray-300 rounded-md shadow-md">
 					<thead class="bg-blue-200">
 						<tr>
 							<th class="px-4 py-2 border">#</th>
 							<th class="px-4 py-2 border">Fecha Salida</th>
-							<th class="px-4 py-2 border">Fecha Creación</th>
-							<th class="px-4 py-2 border">Usuario</th>
 							<th class="px-4 py-2 border">Código OT</th>
-							<th class="px-4 py-2 border">Acciones</th>
+							<th class="px-4 py-2 border">Producto</th>
+							<th class="px-4 py-2 border">Cantidad</th>
 						</tr>
 					</thead>
 					<tbody>
 						<%
-							List<Salida> salidas = (List<Salida>) request.getAttribute("salidas");
-							if (salidas != null && !salidas.isEmpty()) {
-								int index = 1;
-								for (Salida salida : salidas) {
+						List<Salida> salidas = (List<Salida>) request.getAttribute("salidas");
+						if (salidas != null && !salidas.isEmpty()) {
+							int index = 1;
+							for (Salida salida : salidas) {
 						%>
 						<tr class="hover:bg-gray-100 text-center">
-							<td class="px-4 py-2 border"><%= index++ %></td>
-							<td class="px-4 py-2 border"><%= salida.getFechaSalida() %></td>
-							<td class="px-4 py-2 border"><%= salida.getFechaCreacion() %></td>
-							<td class="px-4 py-2 border"><%= salida.getUsuarioUsuario() %></td>
-							<td class="px-4 py-2 border"><%= salida.getCodigoOT() %></td>
-							<td class="px-4 py-2 border">
-								<button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Ver Detalles</button>
-							</td>
+							<td class="px-4 py-2 border"><%=index++%></td>
+							<td class="px-4 py-2 border"><%=salida.getFechaSalida()%></td>
+							<td class="px-4 py-2 border"><%=salida.getCodigoOT()%></td>
+							<td class="px-4 py-2 border"><%=salida.getNombreProducto()%></td>
+							<td class="px-4 py-2 border"><%=salida.getCantidad()%></td>
 						</tr>
 						<%
-								}
-							} else {
+						}
+						} else {
 						%>
 						<tr>
-							<td colspan="6" class="px-4 py-2 text-center border">No se encontraron registros</td>
+							<td colspan="7" class="px-4 py-2 text-center border">No se
+								encontraron registros</td>
 						</tr>
 						<% } %>
 					</tbody>
 				</table>
 			</div>
+
 
 			<!-- Mostrar total de registros -->
 			<div class="mt-4 text-center font-semibold">

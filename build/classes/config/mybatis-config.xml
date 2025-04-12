@@ -26,5 +26,7 @@
 		<mapper resource="dao/ProveedorMapper.xml"/>
 		<mapper resource="dao/CompraMapper.xml"/>
 		<mapper resource="dao/SalidaMapper.xml"/>
+		<mapper resource="dao/IngresoMapper.xml"/>
+		
 	</mappers>
 </configuration>

@@ -7,24 +7,36 @@
 
   <!-- Resultado mapeado a la clase Compra -->
   <resultMap id="CompraMap" type="models.Compra">
-    <id property="idCompra" column="id_compra"/>
-    <result property="total" column="total"/>
-    <result property="fechaAuditoria" column="fecha_auditoria"/>
-    <result property="idProveedor" column="id_proveedor"/>
-    <result property="nombreProveedor" column="nombre_comercial"/>
-  </resultMap>
+  <id property="idCompra" column="id_compra"/>
+  <result property="total" column="total"/>
+  <result property="fechaAuditoria" column="fecha_auditoria"/>
+  <result property="idProveedor" column="id_proveedor"/>
+  <result property="nombreComercial" column="nombre_comercial"/>
+  
+  <!-- Nuevos campos -->
+  <result property="nombreProducto" column="nombre_producto"/>
+  <result property="cantidad" column="cantidad"/>
+  <result property="cantidad" column="cantidad"/>
+  <result property="precioUnd" column="precio_und"/>
+  <result property="subtotal" column="subtotal"/>
+</resultMap>
 
   <!-- Consulta que hace JOIN con TBProveedor para traer el nombre del proveedor -->
   <select id="listarCompras" resultMap="CompraMap">
-    SELECT 
-      c.id_compra,
-      c.total,
-      c.fecha_auditoria,
-      c.id_proveedor,
-      p.nombre_comercial
-    FROM compras c
-    INNER JOIN proveedores p ON c.id_proveedor = p.id_proveedor
-    ORDER BY c.id_compra DESC
-  </select>
+  SELECT 
+    c.id_compra,
+    c.total,
+    c.fecha_auditoria,
+    c.id_proveedor,
+    p.nombre_comercial,
+    pr.nombre AS nombre_producto,
+    c.cantidad,
+    c.precio_und,
+    c.subtotal
+  FROM compras c
+  INNER JOIN proveedores p ON c.id_proveedor = p.id_proveedor
+  INNER JOIN productos pr ON c.id_producto = pr.id_producto
+  ORDER BY c.id_compra DESC
+</select>
 
 </mapper>

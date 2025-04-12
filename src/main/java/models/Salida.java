@@ -6,12 +6,14 @@ public class Salida {
 	private Integer idSalida;
 	private Date fechaSalida;
 	private Date fechaCreacion;
-	private Integer idUsuario;
-	private String usuarioUsuario;
 	private Integer idOrdenTrabajo;
 	private String codigoOT;
-
-
+	private int cantidad;
+	private String nombreProducto;
+	
+	
+	
+	
 	public Integer getIdSalida() {
 		return idSalida;
 	}
@@ -29,18 +31,7 @@ public class Salida {
 	}
 	public void setFechaCreacion(Date fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
-	}
-	public Integer getIdUsuario() {
-		return idUsuario;
-	}
-	public void setIdUsuario(Integer idUsuario) {
-		this.idUsuario = idUsuario;
-	}
-	public String getUsuarioUsuario() {
-		return usuarioUsuario;
-	}
-	public void setUsuarioUsuario(String usuarioUsuario) {
-		this.usuarioUsuario = usuarioUsuario;
+	
 	}
 	public Integer getIdOrdenTrabajo() {
 		return idOrdenTrabajo;
@@ -54,6 +45,18 @@ public class Salida {
 	public void setCodigoOT(String codigoOT) {
 		this.codigoOT = codigoOT;
 	}
-	
+	public int getCantidad() {
+		return cantidad;
+	}
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+	public String getNombreProducto() {
+		return nombreProducto;
+	}
+	public void setNombreProducto(String nombreProducto) {
+		this.nombreProducto = nombreProducto;
+	}
+
 
 }
