@@ -33,7 +33,8 @@ Reportes (reportes)
 Almacena información sobre reportes generados.
 Relacionado con usuarios (quién generó el reporte) y clientes (si es un reporte de cliente).
 
-![diagrama de inventario](https://github.com/user-attachments/assets/e2c7b841-ef05-483f-8383-3c2f9ab21ef9)
+
+![sistema inv](https://github.com/user-attachments/assets/74a53c0d-365c-457e-a347-c39b01847571)
 
 
  ## INTEGRANTES
@@ -41,7 +42,7 @@ Relacionado con usuarios (quién generó el reporte) y clientes (si es un report
 
 *RUIZ TAFUR JEYVIN JESUS*
 
-*CONTRERAS JEISON*
+
 
 ![image](https://github.com/user-attachments/assets/79437558-9f8b-481c-a8a7-f860da5ece42)
 
