@@ -35,23 +35,12 @@
             if (categorias != null && !categorias.isEmpty()) {
                 for(Categoria categoria: categorias) {
         %>
+            <a href="/SistemaINV/productos?categoriaId=<%= categoria.getIdCategoria() %>">
             <div class="flex bg-gray-200 w-[200px] justify-center flex-col p-4 gap-2 items-center rounded-md border border-gray-300 border-solid hover:border-green-600 cursor-pointer">
                 <img class="rounded-sm" src="<%= categoria.getImagenUrl() %>" width="150px">
                 <p class="text-center font-bold text-gray-600"><%= categoria.getNombre() %></p>
-                
-                <!-- Botones -->
-                <!-- <div class="flex flex-col gap-2 w-full">
-                    <button class="bg-blue-500 text-white px-4 py-1 rounded-md w-full hover:bg-blue-600">
-                        Ver Producto
-                    </button>
-                    <button class="bg-yellow-500 text-white px-4 py-1 rounded-md w-full hover:bg-yellow-600">
-                        Editar
-                    </button>
-                    <button class="bg-red-500 text-white px-4 py-1 rounded-md w-full hover:bg-red-600">
-                        Eliminar
-                    </button>
-                </div> -->
             </div>
+            </a>
         <%  } %>
         <%  } else { %>
             <p>No se encontraron registros</p>

@@ -34,4 +34,25 @@
         JOIN categorias c ON p.id_categoria = c.id_categoria
         WHERE p.estado_auditoria = '1'
     </select>
+
+
+	<select id="listarPorCategoria" parameterType="int" resultMap="ProductoMap">
+		SELECT
+    p.id_producto,
+    p.codigo,
+    p.nombre,
+    p.precio,
+    p.moneda,
+    p.stock_actual,
+    p.stock_minimo,
+    p.fecha_creacion,
+    p.id_categoria,
+    c.nombre AS nombre_categoria
+FROM productos p
+JOIN categorias c ON p.id_categoria = c.id_categoria
+WHERE p.estado_auditoria = '1'
+AND p.id_categoria = #{idCategoria}
+
+	</select>
+    
  </mapper>

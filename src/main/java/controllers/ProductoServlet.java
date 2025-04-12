@@ -40,31 +40,24 @@ public class ProductoServlet extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Producto> productos = productoService.listarProductos();
+        String categoriaIdStr = request.getParameter("categoriaId");
+        List<Producto> productos;
+
+        if (categoriaIdStr != null) {
+            try {
+                int categoriaId = Integer.parseInt(categoriaIdStr);
+                productos = productoService.listarPorCategoria(categoriaId);
+            } catch (NumberFormatException e) {
+                // Si no es un número válido, carga todos
+                productos = productoService.listarProductos();
+            }
+        } else {
+            productos = productoService.listarProductos();
+        }
+
         request.setAttribute("productos", productos);
-        RequestDispatcher dispather = request.getRequestDispatcher("/views/productos.jsp");
-        dispather.forward(request, response);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/productos.jsp");
+        dispatcher.forward(request, response);
     }
-
-
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	
-    }
-
-    /**
-     * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
-     */
-    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       
-    }
-
-    /**
-     * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
-     */
-    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-    }
+   
 }

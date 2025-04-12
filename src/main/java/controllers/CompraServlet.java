@@ -40,5 +40,7 @@ public class CompraServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/views/compras.jsp");
 		dispatcher.forward(request, response);
 	}
+	
+	
 
 }
