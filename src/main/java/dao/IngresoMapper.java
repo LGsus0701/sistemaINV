@@ -6,5 +6,6 @@ import models.Ingreso;
 
 public interface IngresoMapper {
 	List<Ingreso> listarIngresos();
+	void insertarIngreso(Ingreso ingreso);
 
 }

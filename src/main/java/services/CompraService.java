@@ -7,7 +7,6 @@ import models.Producto;
 
 public interface CompraService {
 	List<Compra> listarCompras();
-
-	
+	void registrarCompra(Compra compra);
 
 }

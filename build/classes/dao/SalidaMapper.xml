@@ -28,6 +28,19 @@
     INNER JOIN orden_trabajos ot ON s.id_orden_trabajo = ot.id_orden_trabajo
     INNER JOIN productos p ON s.id_producto = p.id_producto
   </select>
+  
+  <insert id="registrarSalida">
+  INSERT INTO salidas (fecha_salida, id_orden_trabajo, id_producto, cantidad)
+  VALUES (#{fechaSalida}, #{idOrdenTrabajo}, #{idProducto}, #{cantidad})
+</insert>
+
+
+<update id="actualizarStockProducto">
+  UPDATE productos
+  SET stock_actual = stock_actual - #{cantidad}
+  WHERE id_producto = #{idProducto} AND stock_actual >= #{cantidad}
+</update>
+  
 
 </mapper>
 

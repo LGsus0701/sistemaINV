@@ -8,6 +8,7 @@ import config.MyBatisUtil;
 import dao.IngresoMapper;
 import models.Ingreso;
 import services.IngresoService;
+import dao.CompraMapper;
 
 
 public class IngresoServiceImpl implements IngresoService {
@@ -29,5 +30,24 @@ public class IngresoServiceImpl implements IngresoService {
 	        return Collections.emptyList();
 	    }
 	}
+	
+	
+	@Override
+	public void insertarIngreso(Ingreso ingreso) {
+	    try (SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession()) {
+	        IngresoMapper ingresoMapper = session.getMapper(IngresoMapper.class);
+	        ingresoMapper.insertarIngreso(ingreso);
+
+	        // Actualizar el stock de productos relacionados con esta compra
+	        CompraMapper compraMapper = session.getMapper(CompraMapper.class);
+	        compraMapper.actualizarStockPorCompra(ingreso.getIdCompra());
+
+	        session.commit();
+	    } catch (Exception e) {
+	        System.out.println("❌ Error al registrar ingreso: " + e.getMessage());
+	        e.printStackTrace();
+	    }
+	}
+
 
 }

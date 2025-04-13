@@ -30,6 +30,14 @@
 		<main class="p-4 w-full">
 			<h2 class="text-2xl font-bold mb-4">Listado de Compras</h2>
 
+			<a href="compras?action=nueva">
+				<button
+					class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+					Agregar compra</button>
+			</a>
+
+
+
 			<!-- Tabla de Compras -->
 			<div class="w-full overflow-x-auto">
 				<table

@@ -12,8 +12,6 @@
   <result property="fechaAuditoria" column="fecha_auditoria"/>
   <result property="idProveedor" column="id_proveedor"/>
   <result property="nombreComercial" column="nombre_comercial"/>
-  
-  <!-- Nuevos campos -->
   <result property="nombreProducto" column="nombre_producto"/>
   <result property="cantidad" column="cantidad"/>
   <result property="cantidad" column="cantidad"/>
@@ -38,5 +36,37 @@
   INNER JOIN productos pr ON c.id_producto = pr.id_producto
   ORDER BY c.id_compra DESC
 </select>
+
+
+<insert id="insertarCompra" parameterType="models.Compra">
+	INSERT INTO compras (
+		id_proveedor,
+		id_producto,
+		cantidad,
+		precio_und,
+		subtotal,
+		total
+	) VALUES (
+		#{idProveedor}, #{idProducto}, #{cantidad}, #{precioUnd}, #{subtotal}, #{total}
+	)
+</insert>
+
+<update id="actualizarStockPorCompra" parameterType="models.Compra">
+    UPDATE productos  
+    SET stock_actual = stock_actual + (
+        SELECT cantidad
+        FROM compras
+        WHERE compras.id_compra = #{idCompra}
+        AND compras.id_producto = productos.id_producto
+    )
+    WHERE productos.id_producto IN (
+        SELECT id_producto
+        FROM compras
+        WHERE id_compra = #{idCompra}
+    );
+</update>
+
+
+
 
 </mapper>

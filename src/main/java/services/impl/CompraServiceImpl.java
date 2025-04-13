@@ -31,5 +31,18 @@ public class CompraServiceImpl implements CompraService {
 	        return Collections.emptyList();
 		}
 	}
+	
+	@Override
+	public void registrarCompra(Compra compra) {
+	    try (SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession()) {
+	        CompraMapper mapper = session.getMapper(CompraMapper.class);
+	        mapper.insertarCompra(compra);
+	        session.commit();
+	    } catch (Exception e) {
+	        System.out.println("❌ Error al registrar compra: " + e.getMessage());
+	        e.printStackTrace();
+	    }
+	}
+
 
 }

@@ -9,4 +9,6 @@ import models.Ingreso;
 public interface IngresoService {
 
 	List<Ingreso> listarIngresos();
+	void insertarIngreso(Ingreso ingreso);
+
 }

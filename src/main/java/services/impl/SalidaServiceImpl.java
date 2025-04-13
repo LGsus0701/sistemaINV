@@ -33,5 +33,25 @@ public class SalidaServiceImpl implements SalidaService {
 	        return Collections.emptyList();
 		}
 	}
+	
+	@Override
+	public boolean registrarSalida(Salida salida) {
+		try (SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession()) {
+			SalidaMapper salidaMapper = session.getMapper(SalidaMapper.class);
+			
+			// Registrar salida
+			salidaMapper.registrarSalida(salida);
+			
+			// Actualizar stock del producto
+			salidaMapper.actualizarStockProducto(salida.getIdProducto(), salida.getCantidad());
+
+			session.commit();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
 
 }

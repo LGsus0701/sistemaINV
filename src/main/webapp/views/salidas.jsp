@@ -30,6 +30,12 @@
 		<main class="p-4 w-full">
 			<h2 class="text-2xl font-bold mb-4">Listado de Salidas</h2>
 
+
+			<a href="/SistemaINV/salidas?action=nueva"
+				class="inline-block mb-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+				+ Nueva Salida </a>
+
+
 			<!-- Tabla de Salidas -->
 			<div class="w-full overflow-x-auto">
 				<table

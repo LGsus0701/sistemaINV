@@ -24,4 +24,11 @@
         ORDER BY fecha_ingreso DESC
     </select>
 
+	<insert id="insertarIngreso" parameterType="models.Ingreso">
+		INSERT INTO ingresos (fecha_ingreso, id_compra, fecha_creacion)
+		VALUES (#{fechaIngreso}, #{idCompra}, CURRENT_TIMESTAMP)
+	</insert>
+
+    
+
 </mapper>

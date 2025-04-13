@@ -8,10 +8,9 @@ public class Salida {
 	private Date fechaCreacion;
 	private Integer idOrdenTrabajo;
 	private String codigoOT;
-	private int cantidad;
+	private Integer cantidad;
+	private Integer idProducto;
 	private String nombreProducto;
-	
-	
 	
 	
 	public Integer getIdSalida() {
@@ -31,7 +30,6 @@ public class Salida {
 	}
 	public void setFechaCreacion(Date fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
-	
 	}
 	public Integer getIdOrdenTrabajo() {
 		return idOrdenTrabajo;
@@ -45,11 +43,17 @@ public class Salida {
 	public void setCodigoOT(String codigoOT) {
 		this.codigoOT = codigoOT;
 	}
-	public int getCantidad() {
+	public Integer getCantidad() {
 		return cantidad;
 	}
-	public void setCantidad(int cantidad) {
+	public void setCantidad(Integer cantidad) {
 		this.cantidad = cantidad;
+	}
+	public Integer getIdProducto() {
+		return idProducto;
+	}
+	public void setIdProducto(Integer idProducto) {
+		this.idProducto = idProducto;
 	}
 	public String getNombreProducto() {
 		return nombreProducto;
@@ -57,6 +61,7 @@ public class Salida {
 	public void setNombreProducto(String nombreProducto) {
 		this.nombreProducto = nombreProducto;
 	}
-
+	
+	
 
 }

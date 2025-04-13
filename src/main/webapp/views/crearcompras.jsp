@@ -13,6 +13,9 @@
     <div class="max-w-xl mx-auto mt-10 bg-white p-6 rounded shadow-md">
         <h2 class="text-2xl font-bold mb-6">Registrar Compra</h2>
         <form action="/SistemaINV/compras" method="post" class="space-y-4">
+            <!-- Campo oculto necesario para que entre al if ("guardar".equals(action)) -->
+            <input type="hidden" name="action" value="guardar">
+
             <div>
                 <label class="block font-medium mb-1">Proveedor</label>
                 <select name="id_proveedor" class="w-full border p-2 rounded">

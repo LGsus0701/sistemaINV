@@ -30,6 +30,12 @@
 		<main class="p-4 w-full">
 			<h2 class="text-2xl font-bold mb-4">Listado de Ingresos</h2>
 
+			<a href="ingresos?accion=nuevo">
+			<button
+				class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+				Agregar ingreso</button>
+			</a>
+
 			<!-- Tabla de Ingresos -->
 			<div class="w-full overflow-x-auto">
 				<table class="min-w-full bg-white border border-gray-300 rounded-md shadow-md">

@@ -6,5 +6,7 @@ import models.Salida;
 
 public interface SalidaService {
 	List<Salida> listarSalidas();
+	boolean registrarSalida(Salida salida);
+
 
 }
